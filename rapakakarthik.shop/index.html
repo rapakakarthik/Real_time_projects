@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign-In Page</title>
+    <title>Modern Login Page</title>
     <style>
-        /* Resetting margins and padding for a clean layout */
+        /* Resetting margins and padding */
         * {
             margin: 0;
             padding: 0;
@@ -13,26 +13,64 @@
             font-family: 'Arial', sans-serif;
         }
 
-        /* Styling the body with a background gradient */
+        /* Body Styling */
         body {
             background: linear-gradient(135deg, #74b9ff, #a29bfe);
             height: 100vh;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #0984e3;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Navigation Bar Styling */
+        nav {
+            background-color: #2d3436;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
             align-items: center;
         }
 
-        /* Container for the sign-in form */
-        .signin-container {
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Main Section Styling */
+        .main-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-grow: 1;
+        }
+
+        .login-container {
             background-color: white;
+            width: 400px;
             padding: 40px;
-            width: 350px;
             border-radius: 12px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
             text-align: center;
         }
 
-        .signin-container h2 {
+        .login-container h2 {
             margin-bottom: 20px;
             color: #2d3436;
         }
@@ -46,7 +84,7 @@
             display: block;
             margin-bottom: 5px;
             font-weight: bold;
-            color: #2d3436;
+            color: #34495e;
         }
 
         input[type="text"],
@@ -56,18 +94,18 @@
             border: 1px solid #dfe6e9;
             border-radius: 8px;
             font-size: 16px;
-            transition: all 0.3s;
+            transition: border-color 0.3s;
         }
 
         input[type="text"]:focus,
         input[type="password"]:focus {
-            border-color: #0984e3;
-            box-shadow: 0 0 5px rgba(9, 132, 227, 0.5);
+            border-color: #2980b9;
             outline: none;
+            box-shadow: 0 0 5px rgba(9, 132, 227, 0.5);
         }
 
-        /* Styling the Sign-In button */
-        .signin-btn {
+        /* Login Button Styling */
+        .login-btn {
             background-color: #0984e3;
             color: white;
             border: none;
@@ -79,44 +117,86 @@
             transition: background-color 0.3s, transform 0.1s;
         }
 
-        .signin-btn:hover {
+        .login-btn:hover {
             background-color: #74b9ff;
             transform: scale(1.05);
         }
 
-        .signin-btn:active {
+        .login-btn:active {
             transform: scale(0.98);
         }
 
-        .forgot-password {
-            margin-top: 15px;
-            display: block;
-            font-size: 14px;
-            color: #0984e3;
-            text-decoration: none;
+        /* Footer Styling */
+        footer {
+            background-color: #2d3436;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 16px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
         }
 
-        .forgot-password:hover {
-            text-decoration: underline;
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .login-container {
+                width: 90%;
+            }
+
+            header {
+                font-size: 28px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="signin-container">
-        <h2>Sign In</h2>
-        <form action="#" method="POST">
-            <div class="input-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" placeholder="Enter your username" required>
-            </div>
-            <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Enter your password" required>
-            </div>
-            <button type="submit" class="signin-btn">Sign In</button>
-            <a href="#" class="forgot-password">Forgot your password?</a>
-        </form>
+    <!-- Header Section -->
+    <header>
+        Welcome to My Website
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contact</a>
+        </div>
+        <div>
+            <a href="#">Sign Up</a>
+            <a href="#">Login</a>
+        </div>
+    </nav>
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+        <div class="login-container">
+            <h2>Login</h2>
+            <form action="#" method="POST">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="login-btn">Login</button>
+            </form>
+        </div>
     </div>
+
+    <!-- Footer Section -->
+    <footer>
+        &copy; 2024 My Website. All rights reserved.
+    </footer>
 </body>
 </html>
 
